@@ -8,12 +8,12 @@ ext.kotlin_version = '1.3.71'
 ext.alpas_version = '0.16.2'
 
 startScripts {
-    applicationName = '__APP_NAME__'
+    applicationName = 'cleaversetup'
 }
 
-mainClassName = '__PACKAGE__.StartKt'
+mainClassName = 'us.littlebets.cleaversetup.StartKt'
 
-group '__PACKAGE__'
+group 'us.littlebets.cleaversetup'
 version '1.0.0'
 
 repositories {
@@ -25,16 +25,8 @@ repositories {
 dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
     implementation 'ch.qos.logback:logback-classic:1.3.0-alpha5'
-    implementation 'mysql:mysql-connector-java:8.0.19'
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
-
     implementation "dev.alpas:alpas:$alpas_version"
-    testImplementation "dev.alpas:pulsar:$alpas_version"
-    // Prepend the latest SHA to try out the latest Alpas version
-//    implementation 'com.github.alpas:alpas:4b0d0f'
-//    testImplementation 'com.github.alpas.alpas:pulsar:4b0d0f'
-
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.1'
 }
 
 run.doFirst { environment 'ALPAS_VERSION', alpas_version }
@@ -48,15 +40,31 @@ compileTestKotlin {
 
 jar {
     manifest {
-        attributes 'Main-Class': '__PACKAGE__.StartKt'
+        attributes 'Main-Class': 'us.littlebets.cleaversetup.StartKt'
     }
 }
 
 shadowJar {
     destinationDirectory = file("./")
-    archiveBaseName.set('__APP_NAME__')
+    archiveBaseName.set('cleaversetup')
     archiveClassifier.set(null)
     version = null
+    dependencies {
+        exclude(dependency('com.github.javafaker:javafaker:.*'))
+        exclude(dependency('me.liuwj.ktorm:.*:.*'))
+        exclude(dependency('com.zaxxer:HikariCP:.*'))
+        exclude(dependency('de.mkammerer:argon2-jvm:.*'))
+        exclude(dependency('org.apache.qpid:qpid-jms-client:.*'))
+        exclude(dependency('org.simplejavamail:simple-java-mail:.*'))
+        exclude(dependency('com.github.freva:ascii-table:.*'))
+        exclude(dependency('org.jetbrains.kotlinx:kotlinx-coroutines-core:.*'))
+        exclude(dependency('org.atteo:evo-inflector:.*'))
+        exclude(dependency('com.fasterxml.jackson.module:jackson-module-kotlin:.*'))
+        exclude(dependency('com.github.marlonlom:timeago:.*'))
+        exclude(dependency('org.xerial:sqlite-jdbc:.*'))
+        exclude(dependency('com.github.simbiose:Encryption:.*'))
+        exclude(dependency('com.github.alpas:url-signer:.*'))
+    }
 }
 
 test {
@@ -64,5 +72,6 @@ test {
 }
 
 installDist {
-    destinationDir = file("./build/install/__APP_NAME__")
+    destinationDir = file("./build/install/cleaversetup")
 }
+

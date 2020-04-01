@@ -1,4 +1,4 @@
-package __PACKAGE__
+package us.littlebets.cleaversetup
 
 import dev.alpas.Application
 import dev.alpas.ServiceProvider
@@ -7,7 +7,6 @@ import dev.alpas.encryption.EncryptionServiceProvider
 import dev.alpas.hashing.HashServiceProvider
 import dev.alpas.logging.LoggerServiceProvider
 import dev.alpas.routing.RouteServiceProvider
-import dev.alpas.ozone.OzoneServiceProvider
 import kotlin.reflect.KClass
 
 // https://alpas.dev/docs/alpas-console
@@ -18,8 +17,7 @@ class ConsoleKernel : ConsoleKernel() {
             LoggerServiceProvider::class,
             EncryptionServiceProvider::class,
             HashServiceProvider::class,
-            RouteServiceProvider::class,
-            OzoneServiceProvider::class
+            RouteServiceProvider::class
         )
     }
 }

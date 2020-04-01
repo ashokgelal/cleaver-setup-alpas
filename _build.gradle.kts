@@ -8,13 +8,13 @@
 //    id("com.github.johnrengelman.shadow") version "5.2.0"
 //}
 //
-//group = "__PACKAGE__"
+//group = "us.littlebets.cleaversetup"
 //version = "1.0.0"
 //
 //application {
-//    mainClassName = "__PACKAGE__.StartKt"
-//    applicationName = "__APP_NAME__"
-//    executableDir = "./build/install/__APP_NAME__"
+//    mainClassName = "us.littlebets.cleaversetup.StartKt"
+//    applicationName = "cleaversetup"
+//    executableDir = "./build/install/cleaversetup"
 //}
 //
 //repositories {
@@ -47,11 +47,11 @@
 //
 //tasks.named<ShadowJar>("shadowJar") {
 //    destinationDirectory.file("./")
-//    archiveBaseName.set("__APP_NAME__")
+//    archiveBaseName.set("cleaversetup")
 //    //archiveClassifier.set(null)
 //    //archiveVersion.set(null)
 //
 //    manifest {
-//        attributes(mapOf("Main-Class" to "__PACKAGE__.StartKt"))
+//        attributes(mapOf("Main-Class" to "us.littlebets.cleaversetup.StartKt"))
 //    }
 //}

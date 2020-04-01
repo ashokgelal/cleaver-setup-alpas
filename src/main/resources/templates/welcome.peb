@@ -4,47 +4,98 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Alpas - The Rapid and Delightful Kotlin Web Framework</title>
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <title>Cleaver - Server provisioning and deployments made easy for you</title>
+    <link rel="stylesheet" href="/css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div id="app" class="flex h-screen m-auto flex-col">
-    <div class="py-6 px-10 text-right text-lg uppercase font-semibold">
-    {% if hasRoute('login') %}
-    {% auth %}
-        <a class="hover:text-red-500" href="/home">Home</a>
-    {% else %}
-        <a class="hover:text-red-500" href="{{ route('login') }}">Log in</a>
-    {% if hasRoute('register') %}
-        <a class="ml-4 hover:text-red-500" href="{{ route('register') }}"><strong>Register</strong> </a>
-    {% endif %}
-    {% endauth %}
-    {% endif %}
-    </div>
+<div id="app" class="flex min-h-screen m-auto flex-col">
     <div class="pb-16 flex flex-col justify-center w-full max-w-4xl mx-auto flex-grow">
         <div class="mx-auto">
-            <a href="https://alpas.dev">
-                <svg width="260px" viewBox="0 0 222 49" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <g fill="#1D2D35" fill-rule="nonzero" stroke="none" stroke-width="1">
-                        <polygon
-                                points="35.0193736 31.3771579 24.936057 8.34592105 14.8527404 31.3771579 12.5163622 36.75 7.37633005 48.5 0.5 48.5 21.6614385 1.5 28.2709295 1.5 49.5 48.5 42.4908653 48.5 37.3508332 36.75"/>
-                        <polygon
-                                points="169.01901 31.3771579 158.935441 8.34592105 148.851871 31.3771579 146.515434 36.75 141.375273 48.5 134.5 48.5 155.66197 1.5 162.271626 1.5 183.5 48.5 176.490689 48.5 171.350528 36.75"/>
-                        <polygon
-                                points="56.5 1.5 63.1805614 1.5 63.1805614 42.6587022 88.5 42.6587022 88.5 48.5 56.5 48.5"/>
-                        <path d="M134.5,17.8807381 C134.5,28.087159 127.101682,34.266422 114.860762,34.266422 L103.225631,34.266422 L103.225631,48.5000007 L96.5,48.5000007 L96.5,1.50000074 L114.860762,1.50000074 C127.099205,1.4975278 134.5,7.67555402 134.5,17.8807381 Z M127.774369,17.8807381 C127.774369,11.1659224 123.268729,7.34036981 114.66007,7.34036981 L103.225631,7.34036981 L103.225631,28.42358 L114.66007,28.42358 C123.266252,28.42358 127.771892,24.5955538 127.771892,17.8807381 L127.774369,17.8807381 Z"/>
-                        <path d="M185.5,42.6089568 L187.972832,37.3786508 C192.325722,40.9424288 197.783599,42.8648744 203.400349,42.812735 C211.481956,42.812735 214.954993,39.6597311 214.954993,35.5693477 C214.954993,24.104665 186.636764,31.3468173 186.636764,13.9145221 C186.636764,6.67236989 192.248001,0.50468431 204.537113,0.50468431 C209.840479,0.406613431 215.058934,1.8503013 219.563564,4.66175873 L217.36016,10.0254469 C213.530462,7.56203315 209.085401,6.23487735 204.537113,6.19688752 C196.587144,6.19688752 193.181772,9.54996449 193.181772,13.6391129 C193.181772,25.1050305 221.5,17.9308044 221.5,35.1617914 C221.5,42.3372526 215.755895,48.5 203.400349,48.5 C196.254972,48.5024681 189.240004,46.0954158 185.5,42.6089568 Z"/>
-                        <path fill="#e53e3e"
-                              d="M21.5,44.5257984 C21.5030458,43.4370603 21.9456423,42.3957064 22.7273652,41.6380182 C23.5090881,40.8803301 24.5636596,40.4705476 25.6517992,40.5016497 C27.8362058,40.5846482 29.5494323,42.4061254 29.4989108,44.5918421 C29.4483893,46.7775588 27.6528332,48.517909 25.4669253,48.4998609 C23.2810175,48.4818127 21.5144345,46.7120514 21.5,44.5257984 L21.5,44.5257984 Z"/>
+            <a href="/">
+                <svg width="280" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     viewBox="0 0 744 128">
+                    <defs>
+                        <path id="reuse-2" fill="#E7E8E9" fill-rule="nonzero"
+                              d="M26.706 26.596l4.81 4.81-7.161 7.163-4.811-4.81z"/>
+                        <path id="reuse-1" fill="#FFF" fill-rule="nonzero"
+                              d="M73.382 23.584c2.066-2.469 1.915-5.946-.303-7.61-1.41-1.057-2.771-2.116-4.182-3.124-5.493 6.854-20.208 24.441-33.21 33.462 1.008 1.36.504.504 1.512 1.864 1.663 2.218 5.14 2.318 7.61.252 9.725-8.264 20.308-15.067 28.573-24.844z"/>
+                        <path id="reuse-0" fill="#E7E8E9" fill-rule="nonzero"
+                              d="M68.897 12.85C63.454 8.82 58.062 4.787 53.274 0L22.736 30.539c4.787 4.787 8.87 10.28 12.951 15.773 13.002-9.02 27.717-26.658 33.21-33.462zM51.41 7.51a1.916 1.916 0 010-2.722 1.916 1.916 0 012.721 0 1.916 1.916 0 010 2.722 2.014 2.014 0 01-2.721 0z"/>
+                        <path id="c"
+                              d="M5.703 57.802L.31 52.409c-.353-.352-.353-.856 0-1.209l20.913-20.913c.353-.353.857-.353 1.21 0l5.392 5.392c.352.352.352.856 0 1.21L6.912 57.801c-.352.352-.907.352-1.21 0z"/>
+                    </defs>
+                    <defs>
+                        <filter id="b" width="153.5%" height="153.5%" x="-19.6%" y="-16%"
+                                filterUnits="objectBoundingBox">
+                            <feOffset dx="2" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"/>
+                            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+                            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+                        </filter>
+                        <filter id="d" width="153.5%" height="153.5%" x="-19.6%" y="-16%"
+                                filterUnits="objectBoundingBox">
+                            <feOffset dx="2" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"/>
+                            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+                            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+                        </filter>
+                        <use xlink:href="#c"/>
+                        <use id="e" xlink:href="#c"/>
+                        <linearGradient id="a" x1="189.385%" x2="0%" y1="164.681%" y2="2.741%">
+                            <stop offset="0%" stop-color="#6A11CB"/>
+                            <stop offset="100%" stop-color="#2575FC"/>
+                        </linearGradient>
+                    </defs>
+                    <g fill="none" fill-rule="evenodd">
+                        <circle cx="64" cy="64" r="64" fill="url(#a)" fill-rule="nonzero"/>
+                        <g opacity=".047" transform="rotate(30 -28.746 105.416)">
+                            <circle cx="52.771" cy="6.148" r="1.915"/>
+                            <use fill-rule="nonzero" xlink:href="#reuse-0"/>
+                            <use fill-rule="nonzero" xlink:href="#reuse-1"/>
+                            <use fill-rule="nonzero" xlink:href="#reuse-2"/>
+                            <g fill-rule="nonzero">
+                                <use fill="#000" filter="url(#b)" xlink:href="#c"/>
+                                <use fill="#2B2B2B" xlink:href="#c"/>
+                            </g>
+                        </g>
+                        <g opacity=".081" transform="rotate(20 -55.668 127.817)">
+                            <circle cx="52.771" cy="6.148" r="1.915"/>
+                            <use fill-rule="nonzero" xlink:href="#reuse-0"/>
+                            <use fill-rule="nonzero" xlink:href="#reuse-1"/>
+                            <use fill-rule="nonzero" xlink:href="#reuse-2"/>
+                            <g fill-rule="nonzero">
+                                <use fill="#000" filter="url(#d)" xlink:href="#e"/>
+                                <use fill="#2B2B2B" xlink:href="#e"/>
+                            </g>
+                        </g>
+                        <g opacity=".205" transform="rotate(10 -125.474 189.818)">
+                            <circle cx="52.771" cy="6.148" r="1.915"/>
+                            <use fill-rule="nonzero" xlink:href="#reuse-0"/>
+                            <use fill-rule="nonzero" xlink:href="#reuse-1"/>
+                            <use fill-rule="nonzero" xlink:href="#reuse-2"/>
+                            <path fill="#2B2B2B" fill-rule="nonzero"
+                                  d="M5.703 57.802L.31 52.409c-.353-.352-.353-.856 0-1.209l20.913-20.913c.353-.353.857-.353 1.21 0l5.392 5.392c.352.352.352.856 0 1.21L6.912 57.801c-.352.352-.907.352-1.21 0z"/>
+                        </g>
+                        <g transform="translate(22 25)">
+                            <ellipse cx="52.797" cy="6.14" rx="1.916" ry="1.913"/>
+                            <path fill="#E7E8E9" fill-rule="nonzero"
+                                  d="M68.93 12.834C63.486 8.808 58.09 4.781 53.3 0L22.748 30.5c4.79 4.78 8.874 10.267 12.958 15.753 13.008-9.01 27.73-26.625 33.226-33.419zM51.436 7.499a1.911 1.911 0 010-2.718 1.92 1.92 0 012.723 0 1.911 1.911 0 010 2.718 2.018 2.018 0 01-2.723 0z"/>
+                            <path fill="#FFF" fill-rule="nonzero"
+                                  d="M73.418 23.554c2.067-2.466 1.916-5.939-.303-7.6-1.411-1.056-2.773-2.113-4.184-3.12-5.496 6.845-20.218 24.41-33.226 33.419 1.008 1.359.504.503 1.512 1.862 1.664 2.214 5.143 2.315 7.613.252 9.731-8.254 20.32-15.049 28.588-24.813z"/>
+                            <path fill="#E7E8E9" fill-rule="nonzero"
+                                  d="M26.72 26.562l4.812 4.805-7.165 7.153-4.813-4.805z"/>
+                            <path fill="#2B2B2B" fill-rule="nonzero"
+                                  d="M5.706 57.728L.31 52.343c-.353-.353-.353-.856 0-1.208l20.924-20.887c.352-.352.857-.352 1.21 0l5.394 5.385c.353.353.353.856 0 1.208L6.916 57.728c-.353.352-.908.352-1.21 0z"/>
+                        </g>
+                        <path fill="#393838" fill-rule="nonzero"
+                              d="M199.227 112.273c18.637 0 33.637-10.91 38.227-30.137l-17.59-1.954c-2.728 10.545-10.728 15.863-20.637 15.863-13.409 0-23.136-9.772-23.136-31.454 0-21.727 9.727-31.727 23.136-31.727 9.91 0 18.137 5.409 20.864 16.227l17.454-1.955c-4.545-19.454-19.681-30.5-38.318-30.5-23.682 0-41.09 17.864-41.09 47.955 0 29.954 17.408 47.682 41.09 47.682zM311.812 111V95.91h-39.454v-78h-17.955V111h57.41zm78.858 0V95.91h-42.546V71.954h36.5V56.909h-36.5V33h42.318V17.91H330.17V111h60.5zm33.175 0l6.773-19.818h35.636L473.027 111h19.227l-34.318-93.09h-19.045L404.573 111h19.272zm37.41-34.545h-25.637l12.273-35.91h1.09l12.273 35.91zM543.43 111l34.318-93.09h-18.863l-24.41 70.454h-1.09L508.93 17.909h-18.863L524.385 111h19.045zm109.949 0V95.91h-42.546V71.954h36.5V56.909h-36.5V33h42.318V17.91H592.88V111h60.5zm37.403 0V76.182h15.59L723.646 111h19.91l-19.273-38.273c9.363-4.682 15.636-13 15.636-25.909 0-17.318-10.727-28.909-32.773-28.909h-34.318V111h17.955zm15.954-49.864h-15.954V33h16.363c10.5 0 15 5.955 15 14.182 0 8.909-5.09 13.954-15.409 13.954z"/>
                     </g>
                 </svg>
             </a>
         </div>
-        <div class="mt-20 flex flex-col md:flex-row self-center md:self-stretch md:justify-between text-lg uppercase text-gray-900 font-semibold">
-            <a href="https://alpas.dev/docs" target="_docs" class="hover:text-red-600 flex mt-4 align-middle">
+        <div class="mt-20 max-w-2xl mx-auto md:w-full flex flex-col md:flex-row self-center md:self-stretch md:justify-between text-lg uppercase text-gray-900 font-semibold">
+            <a href="https://cleaver.cloud/docs" target="_docs" class="hover:text-red-600 flex mt-4 align-middle">
                 <svg class="mr-2 text-gray-700 h-5 self-center" aria-hidden="true" focusable="false" role="img"
                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <g class="fa-group">
@@ -65,14 +116,6 @@
                 </svg>
                 alpasdev
             </a>
-            <a href="https://www.youtube.com/channel/UCGCGb-vvmff3csy8dePBJJQ" target="_alpascasts"
-               class="hover:text-red-600 flex mt-4">
-                <svg class="mr-2 text-gray-700 h-6 self-center" aria-hidden="true" focusable="false" role="img"
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                    <path fill="currentColor"
-                          d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
-                </svg>
-                Alpascasts</a>
             <a href="https://join.slack.com/t/alpasdev/shared_invite/enQtODcwMjE1MzMxODQ3LTJjZWMzOWE5MzBlYzIzMWQ2MTcxN2M2YjU3MTQ5ZDE4NjBmYjY1YTljOGIwYmJmYWFlYjc4YTcwMDFmZDIzNDE"
                target="_slack" class="hover:text-red-600 flex mt-4">
                 <svg class="mr-2 text-gray-700 h-6 self-center" aria-hidden="true" focusable="false" role="img"

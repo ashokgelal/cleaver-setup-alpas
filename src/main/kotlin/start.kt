@@ -1,4 +1,4 @@
-package __PACKAGE__
+package us.littlebets.cleaversetup
 
 import dev.alpas.Alpas
 
