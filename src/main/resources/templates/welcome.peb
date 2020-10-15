@@ -15,7 +15,7 @@
     <div class="pb-16 flex flex-col justify-center w-full max-w-4xl mx-auto flex-grow">
         <div class="mx-auto">
             <a href="https://cleavr.io">
-                <svg width="460px" height="89px" viewBox="0 0 460 89" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg width="280" viewBox="0 0 460 89" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <linearGradient x1="189.385%" y1="164.681%" x2="0%" y2="2.741%" id="linearGradient-1">
             <stop stop-color="#6A11CB" offset="0%"></stop>
